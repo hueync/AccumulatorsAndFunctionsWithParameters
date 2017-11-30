@@ -12,7 +12,7 @@ def main():
     """ Calls the   TEST   functions in this module. """
     #run_test_draw_circles()
     # Un-comment the next lines when you are ready to use them.
-    #run_test_better_draw_circles(10000)
+    run_test_better_draw_circles(100)
     # run_test_even_better_draw_circles()
     run_test_even_better_draw_circles()
 
@@ -137,55 +137,81 @@ def run_test_better_draw_circles(n):
 #   In testing your even_better_draw_circles function,
 #   can you make some fun pictures?
 # ----------------------------------------------------------------------
+
+import rosegraphics as rg
 def even_better_draw_circles():
-    window = rg.RoseWindow(400,300)
-    point1 = rg.Point(200,150)
+
+    window = rg.RoseWindow(400, 300)
+
+    point1 = rg.Point(200, 150)
+    point1.attach_to(window)
     point2 = rg.Point(100, 75)
+    point2.attach_to(window)
     point3 = rg.Point(100, 225)
-    point4 = rg.Point(300,75)
+    point3.attach_to(window)
+    point4 = rg.Point(300, 75)
+    point4.attach_to(window)
     point5 = rg.Point(300, 225)
+    point5.attach_to(window)
     x = 100
-    thickness = 5
-    circle1 = rg.Circle(point1, x)
+    thickness = .5
+
     color = 'red'
     color1 = 'blue'
     color2 = 'yellow'
     color3 = 'green'
     color4 = 'orange1'
-    circle1.outline_color = color
-    circle1.outline_thickness = thickness
-    circle1.center(point1)
+
     for k in range(10):
-        circle1.attach_to(window)
+        circle1 = rg.Circle(point1, x)
+        circle1.outline_color = color
+        circle1.outline_thickness = thickness
         circle1.radius = x+5*k
         circle1.outline_thickness = thickness + k
-        window.render(.05)
+        window.render(.15)
+        circle1.attach_to(window)
     for i in range(5):
+        circle1 = rg.Circle(point1, x)
+        circle1.outline_color = color
+        circle1.outline_thickness = thickness
         circle1.center = point2
-        circle1.radius = x/2 +3*i
+
+        circle1.radius = (x/2 + 3*i)
+
         circle1.outline_color = color1
         circle1.attach_to(window)
-        window.render()
+        window.render(.15)
     for j in range(5):
+        circle1 = rg.Circle(point1, x)
+        circle1.outline_color = color
+        circle1.outline_thickness = thickness
         circle1.center = point3
         circle1.radius = x/2 + 1.5*j
         circle1.outline_color = color2
         circle1.attach_to(window)
-        window.render(.05)
+        window.render(.15)
     for u in range(5):
+        circle1 = rg.Circle(point1, x)
+        circle1.outline_color = color
+        circle1.outline_thickness = thickness
         circle1.center = point4
         circle1.radius = x/3 + 6*u
         circle1.outline_color = color3
         circle1.attach_to(window)
-        window.render(.05)
+        window.render(.15)
     for t in range(5):
+        circle1 = rg.Circle(point1, x)
+        circle1.outline_color = color
+        circle1.outline_thickness = thickness
         circle1.center = point5
         circle1.radius = x/1.5 + 4*t
         circle1.outline_color = color4
-        circle1.attach_to()
-        window.render(.05)
+        circle1.attach_to(window)
+        window.render(.15)
 
     window.close_on_mouse_click()
+
+
 def run_test_even_better_draw_circles():
     print()
     print('--------------------------------------------------')
