@@ -19,6 +19,7 @@ def main():
     run_test_digits_in_cube()
     run_test_digits_in_power()
     run_test_fancy_sums_of_digits()
+    
 
     # ------------------------------------------------------------------
     # DONE: 9. DO THIS LAST!
