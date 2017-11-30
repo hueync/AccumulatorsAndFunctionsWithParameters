@@ -10,10 +10,11 @@ import rosegraphics as rg
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_draw_circles()
+    #run_test_draw_circles()
     # Un-comment the next lines when you are ready to use them.
-    run_test_better_draw_circles(10000)
+    #run_test_better_draw_circles(10000)
     # run_test_even_better_draw_circles()
+    run_test_even_better_draw_circles()
 
 
 # ----------------------------------------------------------------------
@@ -64,7 +65,7 @@ def draw_circles():
     window.close_on_mouse_click()
 
 # ----------------------------------------------------------------------
-# TODO: 2.
+# DONE: 2.
 #   First, RUN this program.  You will see that draw_circles draws
 #   concentric circles whose radii vary by 10.
 #
@@ -136,8 +137,64 @@ def run_test_better_draw_circles(n):
 #   In testing your even_better_draw_circles function,
 #   can you make some fun pictures?
 # ----------------------------------------------------------------------
+def even_better_draw_circles():
+    window = rg.RoseWindow(400,300)
+    point1 = rg.Point(200,150)
+    point2 = rg.Point(100, 75)
+    point3 = rg.Point(100, 225)
+    point4 = rg.Point(300,75)
+    point5 = rg.Point(300, 225)
+    x = 100
+    thickness = 5
+    circle1 = rg.Circle(point1, x)
+    color = 'red'
+    color1 = 'blue'
+    color2 = 'yellow'
+    color3 = 'green'
+    color4 = 'orange1'
+    circle1.outline_color = color
+    circle1.outline_thickness = thickness
+    circle1.center(point1)
+    for k in range(10):
+        circle1.attach_to(window)
+        circle1.radius = x+5*k
+        circle1.outline_thickness = thickness + k
+        window.render(.05)
+    for i in range(5):
+        circle1.center = point2
+        circle1.radius = x/2 +3*i
+        circle1.outline_color = color1
+        circle1.attach_to(window)
+        window.render()
+    for j in range(5):
+        circle1.center = point3
+        circle1.radius = x/2 + 1.5*j
+        circle1.outline_color = color2
+        circle1.attach_to(window)
+        window.render(.05)
+    for u in range(5):
+        circle1.center = point4
+        circle1.radius = x/3 + 6*u
+        circle1.outline_color = color3
+        circle1.attach_to(window)
+        window.render(.05)
+    for t in range(5):
+        circle1.center = point5
+        circle1.radius = x/1.5 + 4*t
+        circle1.outline_color = color4
+        circle1.attach_to()
+        window.render(.05)
 
+    window.close_on_mouse_click()
+def run_test_even_better_draw_circles():
+    print()
+    print('--------------------------------------------------')
+    print('Testing  draw_circles:  See graphics window')
+    print('--------------------------------------------------')
+    even_better_draw_circles()
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
+
+
 main()
