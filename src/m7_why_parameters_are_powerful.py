@@ -2,8 +2,8 @@
 This module lets you experience the POWER of FUNCTIONS and PARAMETERS.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Nathaniel Huey.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -12,7 +12,7 @@ def main():
     """ Calls the   TEST   functions in this module. """
     run_test_draw_circles()
     # Un-comment the next lines when you are ready to use them.
-    # run_test_better_draw_circles()
+    run_test_better_draw_circles(10000)
     # run_test_even_better_draw_circles()
 
 
@@ -31,7 +31,7 @@ def run_test_draw_circles():
     """ Tests the   draw_circles   function. """
     # ------------------------------------------------------------------
     # Students:
-    #   Do NOT touch this function - it has no TODO in it.
+    #   Do NOT touch this function - it has no tO DO in it.
     # ------------------------------------------------------------------
     print()
     print('--------------------------------------------------')
@@ -92,6 +92,20 @@ def draw_circles():
 #   run_test_draw_circles  may get you started more quickly on your new
 #   better_draw_circles  and  run_test_better_draw_circles.
 # ----------------------------------------------------------------------
+
+
+def run_test_better_draw_circles(n):
+
+    z = n*20
+    window = rg.RoseWindow(z,z)
+    center = rg.Point(z/2,z/2)
+    for k in range(21):
+        Circle1 = rg.Circle(center,k*n)
+        Circle1.attach_to(window)
+        window.render(.15)
+    window.close_on_mouse_click()
+
+
 
 
 # ----------------------------------------------------------------------
