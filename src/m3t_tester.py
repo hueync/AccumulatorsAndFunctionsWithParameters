@@ -14,7 +14,6 @@ import m3_calling_functions_returning_values as m3
 import sys
 from io import StringIO
 
-
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_sum_of_digits()

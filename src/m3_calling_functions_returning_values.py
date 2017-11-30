@@ -19,7 +19,7 @@ def main():
     run_test_digits_in_cube()
     run_test_digits_in_power()
     run_test_fancy_sums_of_digits()
-    
+
 
     # ------------------------------------------------------------------
     # DONE: 9. DO THIS LAST!
@@ -205,7 +205,7 @@ def run_test_digits_in_power():
     print('--------------------------------------------------')
     print('Testing the   digits_in_power   function:')
     print('--------------------------------------------------')
-#Test 1:
+    #Test 1:
     expected = 10
     answer = digits_in_power(4,3)
     print('Expected: ', expected)
@@ -287,6 +287,7 @@ def fancy_sums_of_digits(n):
     X = sum_of_digits(n**1000)
     Y = sum_of_digits(n**999)
     return(sum_of_digits(X**Y))
+
     """
     What comes in:  A positive integer n.
     What goes out:
