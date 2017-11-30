@@ -18,6 +18,8 @@ def main():
     # Test your functions by putting calls to them here:
     print_sequence1()
     draw_circles1()
+    print_sequence2()
+    draw_circles2()
 def print_sequence1():
 
     """
@@ -82,7 +84,7 @@ def print_sequence2():
       390.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this function, per its doc-string above.
+    # DONE: 4. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # ------------------------------------------------------------------
@@ -90,8 +92,9 @@ def print_sequence2():
     print('--------------------------------------------------')
     print('Running print_sequence2:')
     print('--------------------------------------------------')
-
-
+    x = 50
+    for k in range(18):
+        print(x + 20 * k)
 def draw_circles2():
     """
     -- Constructs an rg.RoseWindow whose width and height are both 400.
@@ -103,7 +106,7 @@ def draw_circles2():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement this function, per its doc-string above.
+    # DONE: 5. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # ------------------------------------------------------------------
@@ -111,7 +114,15 @@ def draw_circles2():
     print('--------------------------------------------------')
     print('Running draw_circles2:  See graphics window')
     print('--------------------------------------------------')
-
+    window = rg.RoseWindow(400, 400)
+    point1 = rg.Point(50,100)
+    for i in range(18):
+        circle1 = rg.Circle(point1,10)
+        circle1.fill_color = 'blue'
+        circle1.attach_to(window)
+        window.render(.15)
+        point1.x = point1.x + 20
+    window.close_on_mouse_click()
 
 def print_sequence3():
     """
